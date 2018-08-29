@@ -70,7 +70,7 @@ public class TemperatureServiceImpl implements TemperatureService{
 	            default: 
 	            	throw new BadRequestException("The Days must be 7 or 1");
 			 }
-			 System.out.println(env.getProperty("url.base")+env.getProperty("api.key")+coordinates+days+env.getProperty("url.exclude")+units);
+			 
 			 weather = restTemplate.getForObject(
 					 env.getProperty("url.base")+env.getProperty("api.key")+coordinates+days+env.getProperty("url.exclude")+units,Weather.class);
 			return weather.getDaily().getData();
